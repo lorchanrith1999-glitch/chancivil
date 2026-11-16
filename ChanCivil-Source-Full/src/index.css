@@ -1,0 +1,138 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-slate-700 antialiased;
+  }
+  html[lang='km'] body {
+    font-family: 'Noto Sans Khmer', 'Inter', system-ui, sans-serif;
+    line-height: 1.8;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold tracking-tight text-navy;
+  }
+  html[lang='km'] h1,
+  html[lang='km'] h2,
+  html[lang='km'] h3 {
+    letter-spacing: 0;
+    line-height: 1.5;
+  }
+  :focus-visible {
+    outline: 3px solid #35b6c9;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-brand text-white hover:bg-brand-600;
+  }
+  .btn-light {
+    @apply btn bg-white text-navy hover:bg-slate-100;
+  }
+  .btn-outline {
+    @apply btn border border-slate-300 bg-white text-navy hover:border-brand hover:text-brand;
+  }
+  .btn-outline-light {
+    @apply btn border border-white/40 text-white hover:bg-white/10;
+  }
+  .input {
+    @apply w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand;
+  }
+  .card {
+    @apply rounded-lg border border-slate-200 bg-white transition-shadow hover:shadow-md;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-widest text-brand;
+  }
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Article body typography (HTML coming from the editor) */
+  .article-body {
+    @apply text-base leading-8 text-slate-700;
+  }
+  .article-body h2 {
+    @apply mb-3 mt-10 scroll-mt-24 text-2xl;
+  }
+  .article-body h3 {
+    @apply mb-2 mt-8 scroll-mt-24 text-xl;
+  }
+  .article-body p {
+    @apply my-4;
+  }
+  .article-body ul {
+    @apply my-4 list-disc pl-6;
+  }
+  .article-body ol {
+    @apply my-4 list-decimal pl-6;
+  }
+  .article-body li {
+    @apply my-1.5;
+  }
+  .article-body a {
+    @apply text-brand underline underline-offset-2;
+  }
+  .article-body blockquote {
+    @apply my-6 border-l-4 border-accent bg-surface px-4 py-3 text-slate-700;
+  }
+  .article-body table {
+    @apply my-6 w-full border-collapse text-sm;
+  }
+  .article-body th,
+  .article-body td {
+    @apply border border-slate-200 px-3 py-2 text-left;
+  }
+  .article-body th {
+    @apply bg-surface text-navy;
+  }
+  .article-body img {
+    @apply my-6 h-auto max-w-full rounded-md;
+  }
+  .article-body code {
+    @apply rounded bg-slate-100 px-1.5 py-0.5 text-[0.9em] text-navy;
+  }
+}
+
+/* ChanCivil engineering-platform homepage */
+.cc-hero { isolation: isolate; }
+.cc-hero-grid {
+  background-image: linear-gradient(rgba(161, 198, 224, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(161, 198, 224, .07) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(to right, black, transparent 92%);
+}
+.cc-model-card { box-shadow: 0 30px 90px rgba(0,0,0,.28); }
+.cc-discipline-card { min-height: 280px; }
+.cc-tools-banner { background-image: linear-gradient(115deg, rgba(23,105,170,.28), transparent 55%); }
+@media (max-width: 640px) {
+  .cc-discipline-card { min-height: 0; }
+}
+
